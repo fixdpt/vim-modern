@@ -14,6 +14,7 @@ Plug 'maralla/completor.vim'
 Plug 'vhdirk/vim-cmake'
 Plug 'vim-scripts/a.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -26,3 +27,11 @@ autocmd BufWritePre *.c :ClangFormat
 autocmd BufWritePre *.cpp :ClangFormat
 
 let g:clang_format#code_style="google"
+
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+let g:DoxygenToolkit_paramTag_pre="@Param "
+let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
+let g:DoxygenToolkit_authorName="Granville Barnett"
+let g:DoxygenToolkit_licenseTag="My own license"   <-- !!! Does not end with "\<enter>"
