@@ -9,17 +9,17 @@ set cindent
 autocmd FileType make setlocal noexpandtab
 
 call plug#begin()
-Plug 'SirVer/ultisnips'
 Plug 'rhysd/vim-clang-format'
-Plug 'honza/vim-snippets'
+Plug 'maralla/completor.vim'
 Plug 'vhdirk/vim-cmake'
+Plug 'vim-scripts/a.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 call plug#end()
-
-let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 autocmd BufWritePre *.h :ClangFormat
 autocmd BufWritePre *.c :ClangFormat
