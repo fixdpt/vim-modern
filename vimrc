@@ -15,6 +15,8 @@ Plug 'vhdirk/vim-cmake'
 Plug 'vim-scripts/a.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'udalov/kotlin-vim'
+Plug 'chriskempson/base16-vim'
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -34,3 +36,5 @@ let g:DoxygenToolkit_returnTag="@Returns   "
 let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
 let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="Granville Barnett"
+
+colorscheme base16-default-dark
