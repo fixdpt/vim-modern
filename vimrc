@@ -5,6 +5,7 @@ syntax on
 
 set autoindent
 set cindent
+let &t_Co=256
 
 autocmd FileType make setlocal noexpandtab
 
@@ -17,6 +18,9 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'udalov/kotlin-vim'
 Plug 'chriskempson/base16-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
