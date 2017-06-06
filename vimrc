@@ -10,6 +10,7 @@ set term=xterm-256color
 set termencoding=utf-8
 set encoding=utf-8
 set termguicolors
+set hidden
 
 autocmd FileType make setlocal noexpandtab
 
@@ -18,7 +19,10 @@ Plug 'maralla/completor.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'romainl/Apprentice'
+Plug 'JesseKPhillips/d.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'vim-scripts/LustyExplorer'
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -29,3 +33,12 @@ call plug#end()
 let mapleader = ";"
 nnoremap <Leader>f :FZF<CR>
 nnoremap <Leader>e :e 
+nnoremap <Leader>d :bd<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>o :only<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>b :LustyBufferExplorer<CR>
+nnoremap <C-j> :wincmd j<CR> 
+nnoremap <C-k> :wincmd k<CR> 
+
+let g:ackprg = 'ag --vimgrep'
