@@ -11,6 +11,7 @@ set termencoding=utf-8
 set encoding=utf-8
 set termguicolors
 set hidden
+set number
 
 autocmd FileType make setlocal noexpandtab
 
@@ -19,10 +20,10 @@ Plug 'maralla/completor.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'JesseKPhillips/d.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-scripts/LustyExplorer'
+Plug 'rhysd/vim-clang-format'
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -42,3 +43,8 @@ nnoremap <C-j> :wincmd j<CR>
 nnoremap <C-k> :wincmd k<CR> 
 
 let g:ackprg = 'ag --vimgrep'
+
+autocmd FileType make setlocal noexpandtab
+
+let g:clang_format#code_style="mozilla"
+let g:clang_format#auto_format=1
