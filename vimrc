@@ -5,11 +5,8 @@ syntax on
 
 set autoindent
 set cindent
-let &t_Co=256
-set term=xterm-256color
 set termencoding=utf-8
 set encoding=utf-8
-set termguicolors
 set hidden
 set number
 
