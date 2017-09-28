@@ -1,6 +1,6 @@
 set tabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 syntax on
 
 set autoindent
@@ -21,12 +21,15 @@ Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/LustyExplorer'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'uarun/vim-protobuf'
 Plug 'rhysd/vim-clang-format'
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'fsharp/vim-fsharp', {
+      \ 'for': 'fsharp',
+      \ 'do':  'make fsautocomplete',
+      \}
 
 highlight Pmenu ctermfg=15 ctermbg=0 guifg=#000000 guibg=#efefef
 
@@ -44,14 +47,13 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>o :only<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>b :LustyBufferExplorer<CR>
+nnoremap <Leader>m :make<CR>
 nnoremap <C-j> :wincmd j<CR> 
 nnoremap <C-k> :wincmd k<CR> 
 
 let g:ackprg = 'ag --vimgrep'
 
 autocmd FileType make setlocal noexpandtab
-
-"let g:completor_clang_binary = '/usr/bin/clang'
 
 let g:clang_format#code_style='mozilla'
 let g:clang_format#auto_format_on_insert_leav=1
