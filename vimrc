@@ -25,6 +25,10 @@ Plug 'rhysd/vim-clang-format'
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'ericcurtin/CurtineIncSw.vim'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
 
 " make complete colors nicer on the eye for dark background
 highlight Pmenu ctermfg=15 ctermbg=0 guifg=#000000 guibg=#efefef
@@ -40,6 +44,8 @@ nnoremap <Leader>o :only<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>b :LustyBufferExplorer<CR>
 nnoremap <Leader>m :make<CR>
+nnoremap <Leader>a :call CurtineIncSw()<CR>
+nnoremap <Leader>t :TagbarOpenAutoClose<CR>
 nnoremap <C-j> :wincmd j<CR> 
 nnoremap <C-k> :wincmd k<CR> 
 
@@ -47,8 +53,8 @@ let g:ackprg = 'ag --vimgrep'
 
 autocmd FileType make setlocal noexpandtab
 
-let g:clang_format#code_style='llvm'
-let g:clang_format#auto_format_on_insert_leav=1
+let g:clang_format#code_style='google'
+let g:clang_format#auto_format_on_insert_leave=0
 let g:clang_format#auto_formatexpr=1
 autocmd FileType c ClangFormatAutoEnable
 
