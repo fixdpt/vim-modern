@@ -19,7 +19,6 @@ call plug#begin()
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'easymotion/vim-easymotion'
-Plug 'vim-scripts/LustyExplorer'
 Plug 'uarun/vim-protobuf'
 Plug 'rhysd/vim-clang-format'
 Plug 'Valloric/YouCompleteMe'
@@ -29,6 +28,13 @@ Plug 'ericcurtin/CurtineIncSw.vim'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
+Plug 'haya14busa/incsearch.vim'
+Plug 'godlygeek/tabular'
+Plug 'stoklund/dot-vim'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
+Plug 'wannesm/wmgraphviz.vim'
 
 " make complete colors nicer on the eye for dark background
 highlight Pmenu ctermfg=15 ctermbg=0 guifg=#000000 guibg=#efefef
@@ -42,12 +48,16 @@ nnoremap <Leader>d :bd<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>o :only<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>b :LustyBufferExplorer<CR>
+nnoremap <Leader>b :BufExplorer<CR>
 nnoremap <Leader>m :make<CR>
 nnoremap <Leader>a :call CurtineIncSw()<CR>
 nnoremap <Leader>t :TagbarOpenAutoClose<CR>
 nnoremap <C-j> :wincmd j<CR> 
 nnoremap <C-k> :wincmd k<CR> 
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 let g:ackprg = 'ag --vimgrep'
 
@@ -61,3 +71,5 @@ autocmd FileType c ClangFormatAutoEnable
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:rustfmt_autosave = 1
